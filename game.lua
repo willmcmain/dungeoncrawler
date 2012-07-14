@@ -2,15 +2,19 @@ require('data.lua')
 require('state.lua')
 require('utils.lua')
 require('commands.lua')
+require('events.lua')
 
 local prompt = '> '
 
 local state = State.new{location=data.start}
 
+queue_event('init', state)
+
 -- Game loop
 while not data.quit do
     -- process the event loop
-    
+    process_events()
+
     -- process user input
     io.write(prompt)
     input = io.read('*line')
