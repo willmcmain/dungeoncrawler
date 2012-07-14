@@ -20,5 +20,5 @@ while not data.quit do
     input = io.read('*line')
     cmd, params = utils.parse_input(input)
     cmdfunc = commands[cmd]
-    if cmdfunc then cmdfunc(unpack(params)) end
+    if cmdfunc then cmdfunc(state, unpack(params)) end
 end
