@@ -5,8 +5,7 @@ require('commands.lua')
 require('events.lua')
 
 local prompt = '> '
-
-local state = State.new{location=data.start}
+local state = State:new()
 
 queue_event('init', state)
 

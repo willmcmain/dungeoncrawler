@@ -17,11 +17,12 @@ function process_events()
 end
 
 function events.init(state)
+    state.player.location = data.start
     queue_event('room_description', state)
 end
 
 function events.room_description(state)
-    local room = data.rooms[state.location]
+    local room = data.rooms[state.player.location]
     print(room.description)
     io.write('exits: ')
 
@@ -38,13 +39,13 @@ function events.room_description(state)
 end
 
 function events.move(state, exit)
-    local room = data.rooms[state.location] 
+    local room = data.rooms[state.player.location] 
     local next_room = room.exits[exit]
     if not next_room then 
         print("can't go that way!")
         return 
     end
 
-    state.location = next_room
+    state.player.location = next_room
     queue_event('room_description', state)
 end
