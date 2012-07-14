@@ -1,0 +1,37 @@
+Text adventure!!111one
+D&D Style dugeon crawl
+
+move from room to room
+room:
+description
+enemies
+treasure
+exits
+
+character:
+simple RPG system
+stats: 1 - 16 (3d6 - 2)
+primary:
+* strength
+* agility
+* constitution
+* intellect
+
+hp = constitution 
+dodge = agility
+melee attack/damage = strength
+ranged attack/damage = agility
+magic attack/damage = intellect
+
+item slots:
+dominant-hand
+off-hand
+body (armor/clothes)
+
+item:
+name
+slot 
+attack bonus
+defense bonus
+attribute bonus
+
