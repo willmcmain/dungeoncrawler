@@ -35,3 +35,6 @@ attack bonus
 defense bonus
 attribute bonus
 
+combat:
+attack <target>
+cast <spell> <target1> ... <target n>

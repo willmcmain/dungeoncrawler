@@ -8,13 +8,34 @@ function Player.new(self, o)
     return o
 end
 
+Item = {
+    name = '<item>',
+    description = '<description>',
+    slot = 'hand',
+    attack = 0,
+    defense = 0,
+    attribute = 'strength',
+    attr_bonus = 0,
+}
+
+function Item.new(self, o, ...)
+    o = o or {}
+    setmetatable(o, self)
+    self.__index = self
+end
+
 -- Character information
 Character = {
-    strength = 1,
-    agility = 1,
-    constitution = 1,
-    intellect = 1,
+    strength = 10,
+    agility = 10,
+    constitution = 10,
+    intellect = 10,
     inventory = {}
+    slots = {
+        hand = false,
+        offhand = false,
+        body = false,
+    },
 }
 
 function Character.new(self, o, ...)
